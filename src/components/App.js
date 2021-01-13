@@ -11,27 +11,27 @@ export default class App extends Component {
       error: false,
       gifs: []
     }
-    this.gifs = this.modifyState.bind(this)
   }
+
   componentDidMount(){
-    this.fetchTrendingGifs(this.state.zipCode)
+    this.fetchTrendingGifs();
  }
 
  fetchTrendingGifs = () => {
-  axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=lUXSi5Jz1MEbUSDP1zzBLbZW3Dg1ay9i`)
-    .then(res => {this.setState({gifs: res.data.data, error:false}); console.log(this.state.gifs[0].url)})
+  axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=lUXSi5Jz1MEbUSDP1zzBLbZW3Dg1ay9i&limit=9`)
+    .then(res => {this.setState({gifs: res.data.data, error:false})})
     .catch(err => this.setState({error:true}))
 }
 
-
-  modifyState(value){
+  modifyState = (value) => {
     this.setState({ gifs: value })
+    
   }
 
   render() {
     return (
       <>
-      <SearchBar modifyState={this.modifyState} />
+      <SearchBar modifyState={this.modifyState} error={this.error}/>
       <GifCard gifs ={this.state.gifs} error ={this.state.error}/>
       </>
     )

@@ -3,17 +3,14 @@ import React, { Component } from 'react'
 export default class GifCard extends Component {
     render() {
         return (
-            <div>
-                 <div>
-            {this.props.error===true ? <div className="error">No Results</div> : this.props.gifs.map( (item,index) => (
-                    console.log(item),
+                <div>
+                     {this.props.error===true ? <div className="error">No Results</div> : this.props.gifs.map( (item,index) => (
                     <div key={index}>
                         <div>
                           <img src={item.images.fixed_height.url} alt ="gif"></img>
                         </div>
                     </div>
                 ))}
-            </div>
             </div>
         )
     }
