@@ -4,7 +4,11 @@ export default class GifCard extends Component {
     render() {
         return (
                 <div>
-                     {this.props.error===true ? <div className="error">No Results</div> : this.props.gifs.map( (item,index) => (
+                     {this.props.error===true ? <div className="error">No Results</div> : this.props.rand !== "" ? 
+                     
+                     <img src={this.props.rand} alt ="gif"></img> :
+
+                     this.props.gifs.map( (item,index) => (
                     <div key={index}>
                         <div>
                           <img src={item.images.fixed_height.url} alt ="gif"></img>
