@@ -8,19 +8,22 @@ export default class SearchBar extends Component {
         .catch(err => this.setState({error:true}))
     }
 
-    onChange = (event) => {
-        this.fetchSearchGifs(event.target.value)
-    }
+    handleSubmit = (event) => {
+        
+        //console.log(event.target.searchField.value)
+        this.fetchSearchGifs(event.target.searchField.value)
+         event.preventDefault();
+}
 
 
     render() {
         return (
-            <div>
-                <header id ="main-header">Giphy Search</header>
-                <form>
-                    <input type="text" name="search" placeholder="Search..." onChange={this.onChange} />
-                </form>
-            </div>
+           
+          <form  onSubmit={this.handleSubmit}>
+              <input type="text" name="searchField"></input>
+                <button type="submit">Do the thing</button>
+            </form>
+        
         )
     }
 }

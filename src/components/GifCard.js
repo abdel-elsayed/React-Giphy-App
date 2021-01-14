@@ -8,7 +8,7 @@ export default class GifCard extends Component {
             borderBottom: "1px #ccc dotted",
 
             display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gridGap: "10px",
             justifyContent: "space-between",
 		};

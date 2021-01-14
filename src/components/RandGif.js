@@ -14,7 +14,6 @@ export default class RandGif extends Component {
 render() {
     return (
         <div>
-            <header id ="main-header">Giphy Search</header>
             <button onClick={this.fetchRandGif}>Generate Random GIPHY</button>
         </div>
     )
