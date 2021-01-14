@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import GifCard from './components/GifCard.js';
-//import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* //<App /> */}
-
-    <GifCard />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
