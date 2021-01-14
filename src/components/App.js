@@ -11,7 +11,7 @@ export default class App extends Component {
 			error: false,
 			gifs: [],
 			rand: "",
-			limit: 40,
+			limit: 9,
 		};
 	}
 
@@ -36,7 +36,11 @@ export default class App extends Component {
 	};
 
 	modifyState = (value) => {
-		this.setState({ gifs: value });
+    this.setState({ 
+      gifs: value,
+      rand: ""
+     });
+    
 	};
 
 	modifyRand = (value) => {
@@ -53,6 +57,8 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="App">
+        <header id ="main-header">Giphy Search</header>
+        <button onClick={this.loadMore}>LOAD MORE</button>
 				<RandGif modifyState={this.modifyRand} error={this.error} />
 				<SearchBar modifyState={this.modifyState} error={this.error} />
 				<GifCard
@@ -61,7 +67,7 @@ export default class App extends Component {
 					rand={this.state.rand}
 				/>
 
-				<button onClick={this.loadMore}>LOAD MORE</button>
+			
 			</div>
 		);
 	}
