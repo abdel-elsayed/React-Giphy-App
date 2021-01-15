@@ -9,4 +9,4 @@ https://codesandbox.io/s/objective-chaum-euix7?file=/src/App.js
 
 ### Screenshot 
 
-![]()
+![](https://github.com/abdel-elsayed/React-Giphy-App/blob/master/Screen%20Shot%202021-01-14%20at%209.39.33%20PM.png)
