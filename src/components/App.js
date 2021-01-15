@@ -3,6 +3,7 @@ import axios from "axios";
 import GifCard from "./GifCard.js";
 import SearchBar from "./SearchBar.js";
 import RandGif from "./RandGif.js";
+import "../App.css";
 
 export default class App extends Component {
 	constructor() {
@@ -11,7 +12,8 @@ export default class App extends Component {
 			error: false,
 			gifs: [],
 			rand: "",
-			limit: 9,
+			limit: 10,
+			load: 8,
 		};
 	}
 
@@ -36,38 +38,48 @@ export default class App extends Component {
 	};
 
 	modifyState = (value) => {
-    this.setState({ 
-      gifs: value,
-      rand: ""
-     });
-    
+		this.setState({
+			gifs: value,
+			rand: "",
+			limit: 10,
+		});
 	};
 
 	modifyRand = (value) => {
-		this.setState({ rand: value });
+		this.setState({
+			rand: value,
+		});
 	};
 
 	// Function to load more search results
 	loadMore = () => {
 		this.setState({
-			limit: this.state.limit + 20,
+			limit: this.state.limit + this.state.load,
 		});
 	};
 
 	render() {
 		return (
-			<div className="App">
-        <header id ="main-header">Giphy Search</header>
-        <button onClick={this.loadMore}>LOAD MORE</button>
-				<RandGif modifyState={this.modifyRand} error={this.error} />
-				<SearchBar modifyState={this.modifyState} error={this.error} />
+			<div>
+				<header className="header">
+					<h1>Giphy Search</h1>
+					<div className="searchBar">
+						<SearchBar modifyState={this.modifyState} error={this.error} />
+						<div className="right">
+							<RandGif modifyState={this.modifyRand} error={this.error} />
+						</div>
+					</div>
+				</header>
+				
 				<GifCard
 					gifs={this.state.gifs}
 					error={this.state.error}
 					rand={this.state.rand}
 				/>
 
-			
+				{ this.state.limit + this.state.load <= 50 && this.state.rand === "" ?
+					<button className="button" onClick={this.loadMore}>More Giphys</button> : null
+				}
 			</div>
 		);
 	}
