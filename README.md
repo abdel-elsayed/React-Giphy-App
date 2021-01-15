@@ -2,7 +2,7 @@
 This project is part of Tech Talent Pipeline Full-Satck web-development bootcamp.
 
 
-## Code-sandbox link to view the project
+## Code-sandbox link to view and test the project
 
 https://codesandbox.io/s/wonderful-cookies-2woz0?file=/src/components/App.js
 
