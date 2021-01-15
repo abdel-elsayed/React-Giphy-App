@@ -13,15 +13,14 @@ export default class SearchBar extends Component {
         //console.log(event.target.searchField.value)
         this.fetchSearchGifs(event.target.searchField.value)
          event.preventDefault();
-}
-
+    }
 
     render() {
         return (
            
           <form  onSubmit={this.handleSubmit}>
-              <input type="text" name="searchField"></input>
-                <button type="submit">Do the thing</button>
+                <input type="text" name="searchField" placeholder="Find your giphy..." style={{marginRight: "10px"}} />
+                <button className="button-2" type="submit">Search</button>
             </form>
         
         )

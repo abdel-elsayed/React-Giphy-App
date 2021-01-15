@@ -1,16 +1,72 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-  width: 1vw;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.4;
+	background-color: #2f3035;
 }
 
-a {
-  color: #333;
-  text-decoration: none;
+.header {
+	background-color: #171544;
+	display: flex;
+}
+
+.header h1 {
+  color: white;
+  margin: 0% 5%;
+  padding: 20px;
+}
+
+.searchBar {
+  display: grid;
+  flex-flow: row wrap;
+  justify-content: end;
+  align-content: center;
+  padding: 20px;
+  width: 73%;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.button {
+	background-color: #1ab770;
+	border-radius: 28px;
+	border: 1px solid #2f6627;
+	display: inline-block;
+	cursor: pointer;
+	color: #e0fff3;
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 8px 16px;
+	text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  word-wrap: none;
+  margin: 0% 45%;
+}
+
+.button-2 {
+	background-color: #1ab770;
+	border-radius: 28px;
+	border: 1px solid #2f6627;
+	display: inline-block;
+	cursor: pointer;
+	color: #e0fff3;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px 8px;
+	text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
 }
